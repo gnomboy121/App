@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="App1.Page2"
+             Title="Персонаж"
+             BindingContext="Page2">
+    <ContentPage.Content>
+        <Grid x:Name="grid" Margin="5" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label    
+                Text="Lvl:"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                TextColor="Black"
+                FontSize="30"
+                />
+            <!-- Рівень персонажу -->
+            <Label    
+                x:Name="labelLevel"
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                TextColor="Black"
+                FontSize="30"
+                />
+            <Label
+                Grid.Row="0"
+                Grid.RowSpan="1"
+                Grid.Column="2"
+                Grid.ColumnSpan="3"
+                Text="Ім'я"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Start"
+                FontSize="30"
+                TextColor="Black"
+                />
+            <!-- Імя персонажу -->
+            <Label
+                x:Name="PersonNameLabel"
+                Grid.Row="0"
+                Grid.RowSpan="1"
+                Grid.Column="2"
+                Grid.ColumnSpan="3"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="End"
+                FontSize="30"
+                Margin="10"
+                TextColor="Black"
+                />
+            <!-- Кнопка для зміни імені персонажу -->
+            <Button
+                Clicked="NewPersonName"
+                Grid.Row="0"
+                Grid.Column="5"
+                />
+            <!-- Діаграма для виводу накопиченого опиту персонажу -->
+            <StackLayout Orientation="Vertical"
+                         Grid.Row="1"
+                         Grid.RowSpan="2"
+                         Grid.Column="2"
+                         Grid.ColumnSpan="4"
+                         >
+
+
+                <forms:ChartView x:Name="chartView1"  
+                                 HeightRequest="200"
+                                 BackgroundColor="Transparent"
+                                />
+            </StackLayout>
+            <Label    
+                Text="XP"
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                Grid.Column="2"
+                Grid.ColumnSpan="4"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                TextColor="Black"
+                FontSize="30"
+                />
+            <!-- Діаграма для виводу харакетристик персонажу -->
+
+            <StackLayout Orientation="Horizontal"
+                         Grid.Row="3"
+                         Grid.RowSpan="3"
+                         Grid.Column="0"
+                         Grid.ColumnSpan="6"
+                         >
+
+                <forms:ChartView x:Name="chartView2"  
+                                 HorizontalOptions="StartAndExpand"
+                                 WidthRequest="400"
+                                 BackgroundColor="Transparent"
+                                 
+                                />
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

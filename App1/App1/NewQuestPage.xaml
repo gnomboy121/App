@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.NewQuestPage">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <!-- Поле для вводу завдання -->
+                <Entry x:Name="NewQuestText" TextColor="Black" Placeholder="Завдання"                RelativeLayout.XConstraint="150"
+                RelativeLayout.YConstraint="20"/>
+            <!-- Кнопка для створення завдання -->
+            <Button Clicked="OnButtonClicked" TextColor="Black" Text="Додати завдання"                RelativeLayout.XConstraint="115"
+                RelativeLayout.YConstraint="380"/>
+            <Label
+                TextColor="Black"
+                RelativeLayout.XConstraint="110"
+                RelativeLayout.YConstraint="110"
+                Text ="Що нове Завдання вам дає?"/>
+            <!-- Вибір який параметр буде додавати завдання -->
+            <RadioButton
+                x:Name="strengthButton"
+                TextColor="Black"
+                RelativeLayout.XConstraint="5"
+                RelativeLayout.YConstraint="180"
+                Content ="Сила"/>
+            <RadioButton
+                x:Name="healthButton"
+                TextColor="Black"
+                RelativeLayout.XConstraint="5"
+                RelativeLayout.YConstraint="240"
+                Content = "Здоров'я"/>
+            <RadioButton
+                x:Name="brainButton"
+                TextColor="Black"
+                RelativeLayout.XConstraint="5"
+                RelativeLayout.YConstraint="300"
+                Content = "Інтелект"/>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

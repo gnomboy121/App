@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Page1"
+             Title="Завдання"
+             BackgroundColor="Gray">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label FontSize="25" TextColor="Black" BackgroundColor="Gray" HorizontalTextAlignment="Center">
+                Ваші завдання
+            </Label>
+            <!-- Список завдань для виконання -->
+            <ListView x:Name="QuestsToDoView"
+                      ItemsSource="{Binding QuestToDo}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="Center">
+                                <Image></Image>
+                                <Label x:Name="QuestText" FontSize="25" TextColor="Black" Text="{Binding text}"/>
+                                <Button Clicked="Button_Clicked" FontSize="18" TextColor="Black" Text="Виконано"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label FontSize="25" TextColor="Black" BackgroundColor="Gray" HorizontalTextAlignment="Center">
+                Виконані завдання
+            </Label>
+            <!-- Список завдань які вже виконали -->
+            <ListView x:Name="QuestsDoneView"
+                      ItemsSource="{Binding QuestDone}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="Center">
+                                <Image></Image>
+                                <Label FontSize="25" TextColor="Black" Text="{Binding text}"></Label>
+                                <Label FontSize="25" TextColor="Black" >Дата виконання</Label>
+                                <Label FontSize="25" TextColor="Black" Text="{Binding time}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!-- Кнопка для створення нового завдання -->
+            <Button Text="Нове завдання"
+                Clicked="OnButtonClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
